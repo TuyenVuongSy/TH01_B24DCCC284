@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-/* ================= BÀI 5: Quiz App ================= */
 function Question({q, onAnswer}) {
   return (
     <div style={{marginBottom: 20}}>

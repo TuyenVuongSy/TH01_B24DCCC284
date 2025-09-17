@@ -1,21 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, {useState} from "react";
 
-/* ================= BÀI 1: To-do List ================= */
 function TodoList() {
   const [task, setTask] = useState("");
-  const [list, setList] = useState(() => {
-    // Đọc dữ liệu từ localStorage an toàn
-    try {
-      return JSON.parse(localStorage.getItem("tasks")) || [];
-    } catch {
-      return [];
-    }
-  });
-
-  // Lưu vào localStorage mỗi khi list thay đổi
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(list));
-  }, [list]);
+  const [list, setList] = useState([]);
 
   const addTask = () => {
     if (task.trim() === "") return;
@@ -29,7 +16,7 @@ function TodoList() {
 
   return (
     <div>
-      <h2>Bài 1: To-do List</h2>
+      {/* <h2>Bài 1: To-do List</h2> */}
       <input
         value={task}
         onChange={(e) => setTask(e.target.value)}
